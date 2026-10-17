@@ -1,0 +1,52 @@
+universe:
+  min_market_cap_idr: 500_000_000_000
+  min_adv_idr: 5_000_000_000
+  min_price_idr: 100
+  min_liisting_days: 500
+  exclude_special_monitoring: true
+  max_universe_size: 150
+
+features:
+  momentum_windows: [21, 63, 126, 252]
+  vol_window: 60
+  liquidity_window: 60
+  winsorize_pct: 0.02
+
+labeling:
+  horizon_days: 20
+  upper_mult: 2.0
+  lower_mult: 1.5
+  vol_span: 30
+
+model:
+  objective: regression
+  num_leaves: 31
+  max_depths: 5
+  learning_rate: 0.03
+  n_estimators: 500
+  min_child_samples: 100
+  subsample: 0.8
+  colsample_bytree: 0.7
+  reg_lambda: 5.0
+
+cv:
+  n_splits: 6
+  embargo_pct: 0.01
+  train_min_days: 750
+
+regime:
+  n_states: 3
+  exposure_map: [1.0, 0.25, 0.6]
+
+portfolio:
+  top_k: 20
+  max_weight: 0.10
+  max_sector_weight: 0.30
+  target_vol_annual: 0.18
+  rebalance_days: 20
+
+costs:
+  broker_fee_buy: 0.0015
+  broker_fee_sell: 0.0025 
+  slippage_ticks: 2
+  participation_cap: 0.05      

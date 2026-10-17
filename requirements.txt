@@ -1,0 +1,39 @@
+python==3.11.*
+
+# core numerics
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+pyarrow==16.1.0
+
+# modelling
+lightgbm==4.3.0
+scikit-learn==1.5.0
+hmmlearn==0.3.2
+statsmodels==0.14.2
+cvxpy==1.5.1
+
+# data
+yfinance==0.2.40
+requests==2.32.3
+beautifulsoup4==4.12.3
+feedparser==6.0.11
+duckdb==1.0.0
+
+# news / llm
+anthropic==0.34.0
+
+# app
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+pydantic==2.7.4
+streamlit==1.36.0
+plotly==5.22.0
+
+# ops
+apscheduler==3.10.4
+pyyaml==6.0.1
+python-dotenv==1.0.1
+joblib==1.4.2
+loguru==0.7.2
+pytest==8.2.2
